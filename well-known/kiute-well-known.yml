@@ -1,0 +1,95 @@
+generated: '2026-08-17'
+method: probed
+source: live GET probes of every resolving kiute.com host, 2026-08-17
+note: >-
+  Recorded absence. Every /.well-known/ path on every Kiute host answers HTTP 301 to a
+  Booksy URL — kiute.com, www.kiute.com and app.kiute.com to https://booksy.com/fr-fr/,
+  pro.kiute.com to https://biz.booksy.com/fr-fr. The redirect is a blanket catch-all: it
+  is returned for every path, not only for the site root, so no /.well-known/ document is
+  served by this company at any host. No WellKnown or SecurityTxt pointer is emitted in
+  apis.yml, because none of these probes returned a document. Kiute (formerly FlexyBeauty,
+  merged with LeCiseau) was acquired by Booksy on 2021-11-09 and the brand was retired;
+  Booksy is profiled separately at all/booksy/ and its Public API is documented at
+  docs.booksy.com.
+hosts:
+- host: kiute.com
+  redirects_all_paths_to: https://booksy.com/fr-fr/
+- host: www.kiute.com
+  redirects_all_paths_to: https://booksy.com/fr-fr/
+- host: pro.kiute.com
+  redirects_all_paths_to: https://biz.booksy.com/fr-fr
+- host: app.kiute.com
+  redirects_all_paths_to: https://booksy.com/fr-fr/
+documents:
+- path: /.well-known/security.txt
+  status: 301
+  file: null
+- path: /.well-known/openid-configuration
+  status: 301
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: 301
+  file: null
+- path: /.well-known/api-catalog
+  status: 301
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 301
+  file: null
+- path: /.well-known/agent-card.json
+  status: 301
+  file: null
+- path: /.well-known/agent.json
+  status: 301
+  file: null
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery run against every resolving host. No API host exists
+    (api.kiute.com, developers.kiute.com, docs.kiute.com, dev.kiute.com all NXDOMAIN) and
+    every spec/introspection path on the web hosts returns the same blanket 301 to Booksy.
+    No OpenAPI, GraphQL, MCP or A2A surface belongs to this company. No agent card was
+    written, per the search-only rule.
+  probes:
+  - path: /openapi.json
+    status: 301
+  - path: /swagger.json
+    status: 301
+  - path: /api-docs
+    status: 301
+  - path: /llms.txt
+    status: 301
+  - path: /graphql
+    status: 301
+  dns:
+  - host: api.kiute.com
+    result: NXDOMAIN
+  - host: developers.kiute.com
+    result: NXDOMAIN
+  - host: docs.kiute.com
+    result: NXDOMAIN
+  - host: dev.kiute.com
+    result: NXDOMAIN
+  - host: help.kiute.com
+    result: NXDOMAIN
+  - host: support.kiute.com
+    result: NXDOMAIN
+  related_domains:
+  - domain: kiute.fr
+    status: 301
+    target: https://booksy.com/fr-fr/
+  - domain: kiute.pro
+    status: 0
+    note: resolves to Gandi parking addresses; no HTTPS listener
+  - domain: leciseau.fr
+    status: 404
+    note: predecessor brand, same origin IP, no site served
+  registries:
+  - registry: npm
+    query: kiute
+    status: 404
+  - registry: pypi
+    query: kiute
+    status: 404
+  - registry: github-org
+    query: https://api.github.com/orgs/kiute
+    status: 404

@@ -42,6 +42,10 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Kiute is a company surfaced as a portfolio company of serena and added to the API Evangelist network as a stub for enrichment. Sector: marketplace. This profile is a lead awaiting the enrichment pipeline.
+Kiute was a French salon management and online booking platform for hair salons, barbershops and beauty institutes, formed from the September 2020 merger of Flexy (FlexyBeauty) and LeCiseau and backed by Serena, Newfund, Matmut Innovation, 123IM, UL Invest and Bourrelier Group. Its Kiute Pro product combined a point-of-sale till, appointment calendar, client records, marketing and an online booking marketplace serving roughly 10,000 beauty and wellness businesses.
+
+**Booksy acquired Kiute on 2021-11-09 and has retired the brand.** As of 2026-08-17 every Kiute host answers a blanket HTTP 301 to Booksy for every path — `kiute.com`, `www.kiute.com`, `app.kiute.com` and `kiute.fr` to `https://booksy.com/fr-fr/`, `pro.kiute.com` to `https://biz.booksy.com/fr-fr` — and no `api`, `docs`, `developers` or `help` subdomain resolves. Kiute publishes no API, no specification and no developer program of its own. The successor surface is the Booksy Public API, profiled separately in this network at [booksy](https://github.com/api-evangelist/booksy) and documented at docs.booksy.com.
+
+Coverage: `none` / `defunct` — see `x-coverage` in `apis.yml` for the probed evidence, and `well-known/kiute-well-known.yml` for the full contract-discovery probe record.
 
 Source: portfolio company of [serena](https://github.com/api-evangelist/serena) — https://www.kiute.com/
